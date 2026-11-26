@@ -1,0 +1,46 @@
+name: Publish versioned release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - VERSION
+      - .github/workflows/release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rain-alert-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Test synthetic protocol and send handling
+        run: python -m unittest -v test_probe.py
+      - name: Build source package and checksums
+        run: python scripts/build_release.py
+      - name: Publish prerelease with assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          VERSION="$(cat VERSION)"
+          gh release create "v${VERSION}" dist/* \
+            --target "$GITHUB_SHA" \
+            --title "Rain Alert v${VERSION}（验证版）" \
+            --notes-file RELEASE_NOTES.md \
+            --prerelease \
+            --latest=false

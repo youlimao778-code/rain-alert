@@ -1,12 +1,18 @@
 # rain-alert
 
+**当前发布版本： [v0.1.0（验证版）](https://github.com/youlimao778-code/rain-alert/releases/tag/v0.1.0)**
+
+**[下载 v0.1.0 完整运行包](https://github.com/youlimao778-code/rain-alert/releases/download/v0.1.0/rain-alert-v0.1.0-source-kit.zip)** · [一页步骤](https://github.com/youlimao778-code/rain-alert/releases/download/v0.1.0/rain-alert-v0.1.0-quickstart.pdf) · [版本记录](CHANGELOG.md)
+
+这个版本需要 Python 3.13 和 Microsoft Edge；当前提供的是源码运行包，尚无免 Python 的 `.exe` 安装版。
+
 长江雨课堂随堂题目提醒工具：电脑保持学生课堂网页打开，识别新题后通过 Server酱³ 提醒安卓手机，收到提醒后由本人手动作答。
 
 > 当前为最小验证版，非雨课堂官方产品。电脑仅联网还不够：需要保持程序、工具独立打开的 Edge 和具体学生课堂页面运行。
 
 ## 下载使用
 
-**不懂编程的使用者，优先下载[简明转发包](downloads/rain-alert-starter.zip)**（打开文件页后点击下载按钮）。解压后包含程序压缩包和一页使用步骤；继续将内部程序包“全部解压”后操作。
+**不懂编程的使用者，优先下载上方 Releases 中的版本运行包。** 解压后包含程序压缩包和一页使用步骤；继续将内部程序包“全部解压”后操作。仓库内也保留[原简明转发包](downloads/rain-alert-starter.zip)作为备用下载。
 
 - [一页使用步骤 PDF](docs/quickstart.pdf)
 - 也可点击仓库右上方 **Code → Download ZIP**，解压源码，进入包含 `setup.cmd` 的目录。
