@@ -1,0 +1,21 @@
+# Local credentials, sessions and runtime data
+local/
+.env
+.env.*
+!.env.example
+adapter.json
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.jsonl
+*.log
+
+# Machine-specific Python environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
